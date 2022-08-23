@@ -3,7 +3,7 @@
 async function pegardados(){
 
 try{    
-        let User = 'maykbrito';
+        let User = 'VBrianB';
         const response = await fetch(`https://api.github.com/users/${User}`)
    
        
@@ -29,9 +29,18 @@ try{
         let RepositoriesNumber = document.getElementById('Repositories-Number').textContent = await user.public_repos;
         let Followers = document.getElementById('Followers').textContent = await user.followers;
         let Following = document.getElementById('Following').textContent = await user.following;
-        let imgContribuitions = document.getElementById('stats-img-contribuitions').src = `https://github-readme-stats.vercel.app/api?username=${User}&show_icons=true&theme=radical&include_all_commits=true&count_private=true`
+        let imgContribuitions = document.getElementById('stats-img-contribuitions').src = `https://github-readme-stats.vercel.app/api?username=${User}&show_icons=true&theme=radical&include_all_commits=true&count_private=true&title_color=#ffffff`;
         let imgLanguages = document.getElementById('stats-img-languages').src = `https://github-readme-stats.vercel.app/api/top-langs/?username=${User}&layout=compact&langs_count=7&theme=radical`;
-}
+        let ProfileViews = document.getElementById('profile_views').src = `https://komarev.com/ghpvc/?username=${User}&color=red`;
+        let company = await user.company;
+        if(company !== null){
+            document.getElementById('company_h3').textContent = company
+        }
+        let ReadMe = document.getElementById('README_').src = `https://github-readme-stats.vercel.app/api/pin/?username=${User}&repo=${User}&theme=radical`
+        let LinkRead = document.getElementById('link_read').href = `https://github.com/${User}/${User}`
+        
+    }
+
 
 
 
