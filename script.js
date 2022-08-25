@@ -1,40 +1,57 @@
 
 
 
-let User = 'maykbrito';
 
 
-document.querySelector('.btn-start-git').addEventListener('click', (e)=>{
+/* Onclick Functions */
+
+document.querySelector('#ChangeUser').addEventListener('click',()=>{
+    let cookie = true
+    let StatsScreen = document.querySelector('.container');
+    let InputScreen = document.querySelector('.input-screen');
+   
+    animationOut(StatsScreen);
+    setTimeout(() => {
+        animationIn(InputScreen);
+        animationIn(document.querySelector('.chat-box'));
+       
+    }, 500)
+    document.getElementById('user').value='';
+    document.querySelector('.chat-box span').innerHTML = 'Glad you liked, keep using GitStats!'
+})
+
+
+document.querySelector('.btn-start-git').addEventListener('click', () => {
     let ScreenW = document.querySelector('.container-welcome');
     let InputScreen = document.querySelector('.input-screen');
- 
+
     animationOut(ScreenW);
-    setTimeout(()=>{
+    setTimeout(() => {
         animationIn(InputScreen);
-    },1200)
+    }, 500)
+
     
-    console.log('executou');
 });
 
-
-
-document.querySelector('.btn-start-git-stats').addEventListener('click', ()=>{
+document.querySelector('.btn-start-git-stats').addEventListener('click', () => {
 
     let InputScreen = document.querySelector('.input-screen');
     let StatsScreen = document.querySelector('.container');
     animationOut(InputScreen);
-    setTimeout(()=>{
+    setTimeout(() => {
         StatsScreen.style.display = 'flex'
-        setTimeout(()=>{
+        setTimeout(() => {
             StatsScreen.style.opacity = '1'
-        },300)
-    },1200)
+        }, 300)
+    }, 500)
     pegardados();
 
 
 });
 
 
+
+/* connecting the API and creating the interface */
 
 async function pegardados() {
 
@@ -45,7 +62,7 @@ async function pegardados() {
 
         const user = await response.json();
 
-       
+
         // Interface - Profile
 
         let profilePic = document.getElementById('profile-img').src = await user.avatar_url;
@@ -77,11 +94,6 @@ async function pegardados() {
         console.log('executou');
     }
 
-
-
-
-
-
     catch (e) {
         console.log(e)
     }
@@ -89,33 +101,21 @@ async function pegardados() {
 
 }
 
+/* Animations */
 
+function animationOut(item) {
 
-
-/* Pegar Followers - Usar Map
-async function pegarFollowers(){
-        const response = await fetch(`https://api.github.com/users/${User}/followers`);
-        const Followers = await response.json();
-        console.log(Followers[0])
+    item.style.opacity = '0'
+    setTimeout(() => {
+        item.style.display = 'none'
+    }, 200)
 }
-pegarFollowers();*/
+function animationIn(item) {
 
-
-
-
-function animationOut(item){
-    
-        item.style.opacity = '0'
-        setTimeout(()=>{
-            item.style.display = 'none'
-        },200)
-}
-function animationIn(item){
-   
 
     item.style.display = 'block'
-    setTimeout(()=>{
+    setTimeout(() => {
         item.style.opacity = '1'
-    },300)
+    }, 300)
 
 }

@@ -7,6 +7,7 @@
     font-family: 'Roboto', sans-serif;
     transition: .5s ease;
 }
+
 :root
 
 /* Colors */
@@ -51,15 +52,232 @@ header span {
     margin-left: 1.2em;
 }
 
+
+/* Welcome Page */
+
+.container-welcome {
+    background-color: #000;
+    background-image: url(img/backG.jpg);
+    background-position: right;
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-shadow: inset 30vw 45vh 122px rgba(0, 0, 0, 0.582);
+    min-height: 100vh;
+    min-width: 100vw;
+    opacity: 1;
+    display: block;
+}
+
+.welcome-header {
+    display: flex;
+    width: inherit;
+    justify-content: center;
+    align-items: center;
+    height: 15vh;
+    position: fixed;
+    top: 0;
+}
+
+.welcome-header span {
+    color: var(--white);
+    font-size: var(--max-font-size);
+    font-weight: 700;
+    margin: 0 0.8rem;
+}
+
+.logo {
+    max-width: 42px;
+    transform: translateY(-1px);
+    margin-left: 4em;
+}
+
+.welcome {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 2em;
+    color: white;
+    font-size: 32px;
+    max-width: 50vw;
+
+}
+
+.welcome h4 {
+    font-size: 18px;
+    font-weight: 300;
+    color: rgba(255, 255, 255, 0.912);
+    margin-left: .2em;
+    margin-top: .5em;
+    animation: fade-left 1.6s ease;
+}
+
+.welcome h2 {
+    animation: fade-left-max 1.6s ease;
+}
+
+.btn-start-git {
+    padding: 12px 42px;
+    border-radius: 8px;
+    background-color: #3632ec;
+    margin-top: 15px;
+    color: white;
+    font-weight: 500;
+    border: none;
+    text-transform: uppercase;
+    animation: fade-up-min .4s ease;
+
+
+}
+
+.btn-start-git:hover {
+    transform: translateY(-5px);
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+/* Input screen */
+
+
+.input-screen {
+    min-height: 100vh;
+    min-width: 100vw;
+    background-color: var(--grey);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    display: none;
+}
+
+.content-screen {
+    min-height: inherit;
+    min-width: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.chat-box {
+    width: 300px;
+    height: 150px;
+
+    background: #d1d1d1;
+    box-shadow: 5px 5px 95px #d1d1d164;
+    position: absolute;
+    left: -90px;
+    top: -40px;
+    border-radius: 24px;
+    display: flex;
+    transition: .3s;
+}
+
+.chat-box:after {
+    content: "";
+    width: 50px;
+    height: 50px;
+    background-color: rgb(59, 59, 59);
+    position: absolute;
+    left: -20px;
+    top: -20px;
+    border-radius: 24px;
+
+    background-image: url(img/Developer_Img.jpg);
+    background-size: cover;
+    box-shadow: 5px 5px 25px #000;
+}
+
+.chat-box span {
+    z-index: 999;
+    position: inherit;
+    margin-left: 25px;
+    margin-top: 50px;
+    color: black;
+    font-size: var(--med-font-size);
+}
+
+#close {
+    position: absolute;
+    color: rgb(49, 100, 252);
+    bottom: 20px;
+    left: 25px;
+    cursor: pointer;
+}
+
+.box-input {
+    width: 600px;
+    height: 450px;
+    border-radius: 40px;
+    background-color: #2b2a31;
+    box-shadow: 24px 12px 12px #060606;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.logo-input-area {
+    display: flex;
+    flex-direction: column;
+    margin-top: -10px;
+    align-items: center;
+
+}
+
+.logo-input-area img {
+    max-width: 96px;
+}
+
+.logo-input-area span {
+    font-weight: 700;
+    color: white;
+}
+
+#user {
+    outline: none;
+    border: none;
+    padding: 12px 10px;
+    padding-right: 32px;
+    border-radius: 12px;
+    margin-top: 30px;
+
+}
+
+.btn-start-git-stats {
+    padding: 12px 46px;
+    border-radius: 8px;
+    border: none;
+    margin-top: 20px;
+    color: white;
+    background-color: #2D52C1;
+}
+
+.btn-start-git-stats:hover {
+    box-shadow: 0px 0px 12px #193382;
+    cursor: pointer;
+}
+
+
+/* Stats Screen */
+
+
 .container {
     display: flex;
     max-width: 1280px;
     justify-content: center;
     padding: 0 60px;
-    margin-top: 70px;
+    margin-top: 30px;
     display: none;
     opacity: 0;
     transition: .6s;
+    
 
 }
 
@@ -207,6 +425,7 @@ header span {
 .stats-profile {
     display: flex;
     animation: fade-down 1s ease;
+    position: relative;
 
 }
 
@@ -280,295 +499,79 @@ header span {
     padding: 15px 0;
     margin-top: .9em;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-/* Input screen */
-
-
-.input-screen{
-    min-height: 100vh;
-    min-width: 100vw;
-    background-color: var(--grey);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    opacity: 0;
-    display: none;
-}
-.content-screen{
-    min-height: inherit;
-    min-width: inherit;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.chat-box{
-    width: 300px;
-    height: 150px;
-  
-    background: #d1d1d1;
-    box-shadow: 5px 5px 95px #d1d1d164;
+.changeUser{
     position: absolute;
-    left: -90px;
-    top: -40px;
-    border-radius: 24px;
-    display: flex;
-    transition: .3s;
-}
-.chat-box:after{
-    content: "";
-    width: 50px;
-    height: 50px;
-    background-color: rgb(59, 59, 59);
-    position: absolute;
-    left: -20px;
-    top: -20px;
-    border-radius: 24px;
-   
-    background-image: url(img/Developer_Img.jpg);
-    background-size: cover;
-    box-shadow: 5px 5px 25px #000;
-}
-.chat-box span{
-    z-index: 999;
-    position: inherit;
-    margin-left: 25px;
-    margin-top: 50px;
-    color: black;
-    font-size: var(--med-font-size);
-}
-#close{
-    position: absolute;
-    color: rgb(49, 100, 252);
-    bottom: 20px;
-    left: 25px;
-    cursor: pointer;
-}
-.box-input{
-    width: 600px;
-    height: 450px;
-    border-radius: 40px;
-    background-color: #2b2a31;
-    box-shadow: 24px 12px 12px #060606;
-    position: relative;
-    display: flex;   
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-.logo-input-area{
-    display: flex;
-    flex-direction: column;
-    margin-top: -10px;
-    align-items: center;
-    
-}
-.logo-input-area img{
-    max-width: 96px;
-}
-.logo-input-area span{
-    font-weight: 700;
-    color: white;
-}
-#user{
-    outline: none;
-    border: none;
-    padding: 12px 10px;
-    padding-right: 32px;
-    border-radius: 12px;
-    margin-top: 30px;
-    
-}
-
-.btn-start-git-stats{
-    padding: 12px 46px;
-    border-radius: 8px;
-    border: none;
-    margin-top: 20px;
-    color: white;
-    background-color: #2D52C1;
-}
-.btn-start-git-stats:hover{
-    box-shadow: 0px 0px 12px #193382;
-    cursor: pointer;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* Welcome Page */
-
-.container-welcome{
-    background-color: #000;
-    background-image: url(img/backG.jpg);
-    background-position: right;
-    background-repeat: no-repeat;
-    background-size: cover;
-    box-shadow: inset 30vw 45vh 122px rgba(0, 0, 0, 0.582);
-    min-height: 100vh;
-    min-width: 100vw;
-    opacity: 1;
-    display: block;
-}
-.welcome-header {
-    display: flex;
-    width: inherit;
-    justify-content: center;
-    align-items: center;
-    height: 15vh;
-    position: fixed;
-    top: 0;
-}
-
-.welcome-header span {
-    color: var(--white);
-    font-size: var(--max-font-size);
-    font-weight: 700;
-    margin: 0 0.8rem;
-}
-
-.logo {
-    max-width: 42px;
-    transform: translateY(-1px);
-    margin-left: 4em;
-}
-.welcome{
-    position: absolute;
+    right: 20px;
     top: 50%;
     transform: translateY(-50%);
-    left:2em;
-    color: white;
-    font-size: 32px;
-    max-width: 50vw;
-    
-}
-.welcome h4{
-    font-size: 18px;
-    font-weight: 300;
-    color: rgba(255, 255, 255, 0.912);
-    margin-left: .2em;
-    margin-top: .5em;
-    animation: fade-left 1.6s ease;
-}
-.welcome h2{
-    animation: fade-left-max 1.6s ease;
-}
-.btn-start-git{
-    padding: 12px 42px;
+    padding: 12px 24px;
     border-radius: 8px;
-    background-color: #3632ec;
-    margin-top: 15px;
-    color: white;
-    font-weight: 500;
-    border: none;
-    text-transform: uppercase;
-    animation: fade-up-min 1.6s ease;
     
-
+    background-color: #2551d7;
+    color: white;
 }
-.btn-start-git:hover{
-    transform: translateY(-5px);
+.changeUser:hover{
+    transform: translateY(-28px);
     cursor: pointer;
 }
-
-
-
-
-
-
 /*  Keyframes */
 
 
-@keyframes fade-left{
-    from{
+@keyframes fade-left {
+    from {
         opacity: 0;
         transform: translateX(-50px);
     }
-    to{
+
+    to {
         opacity: 1;
         transform: translateX(0px);
     }
 }
 
-@keyframes fade-left-max{
-    0%{
+@keyframes fade-left-max {
+    0% {
         opacity: 0;
         transform: translateX(-80px);
     }
-    50%{
+
+    50% {
         opacity: 0.7;
     }
-    100%{
+
+    100% {
         opacity: 1;
         transform: translateX(0px);
     }
 }
 
-@keyframes fade-up-min{
-    0%{
+@keyframes fade-up-min {
+    0% {
         opacity: 0;
         transform: translateY(15px);
     }
-    50%{
+
+    50% {
         opacity: 0.7;
     }
-    100%{
+
+    100% {
         opacity: 1;
         transform: translateY(0px);
     }
 }
-@keyframes fade-down{
-    0%{
+
+@keyframes fade-down {
+    0% {
         opacity: 0;
         transform: translateY(-15px);
     }
-    50%{
+
+    50% {
         opacity: 0.7;
     }
-    100%{
+
+    100% {
         opacity: 1;
         transform: translateY(0px);
     }
