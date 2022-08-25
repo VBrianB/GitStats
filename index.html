@@ -1,80 +1,145 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Git Stats</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <header> <span> GitStats </span>  <img src="img/logo-GitStats.png" class="logo" alt="logo"> </header>
-   <div class="container">
-    <div class="left">
-        <div class="item profile">
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+   
 
-            <div class="profile-pic-area">
-                <img src="img/logo-GitStats.png" id="profile-img" alt="">
-            </div>
 
-            <div class="user-area">
-                <span id="name-irl">Sapao Careca</span>
-                <span id="user-name">Sapo_Careca</span>
-                <img src="https://komarev.com/ghpvc/?username=maykbrito&color=red" id="profile_views" alt="Profile views" /> 
-               
-            </div>
-
-            <div class="bio-area">
-                <span id="bio-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis impedit deserunt ex molestias quos dolores ut maxime quaerat, accusantium unde exercitationem aperiam temporibus? Ipsam dolore id mollitia nihil quisquam fuga?</span>
-            </div>
-
-            <div class="info">
-               <label class="info-localization">
-                <img src="img/localizattion-icon.png" alt="">    <span id="localization"> localization </span>
-               </label> 
-               <label class="link">
-                <img src="img/link-icon.png" alt=""><span id="blogText"><a href="" id="blog">aa</a></span>
-               </label> 
-                
-            </div>
-            
-        </div>
-    </div>
-    <div class="right">
-        <div class="item stats-profile">
-            <div class="btn-stats active">Overview</div>
-            <div class="btn-stats">Respositories<span id="Repositories-Number">4</span></div>
-            <div class="btn-stats">Followers<span id="Followers">4</span></div>
-            <div class="btn-stats">Following<span id="Following">4</span></div>     
-        </div>
-      
-        <div class="item stats">
-            <img width="60%" id="stats-img-contribuitions" height="180em" src="https://github-readme-stats.vercel.app/api?username=VBrianB&show_icons=true&theme=radical&include_all_commits=true&count_private=true&title_color=#ffffff"/>
-            <img width="40%" id="stats-img-languages" height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=VBrianB&layout=compact&langs_count=7&theme=radical"/>
-        </div>
+    <div class="container-welcome">
+      <div class="welcome-header"> 
+       <img src="img/logo-GitStats.png" class="logo" alt="logo" /> 
+       <span> GitStats </span>
+      </div>
+   
        
-        <div class="content-extra">
-        <div class="item ext">
-            <h3>Medals</h3>
-           
-            <div class="medalhas">
-                <img src="img/Medalha-Premium.png" alt="">
-                <img src="img/Medalha-MOC.png" alt="">
-           </div>
-            
-         </div>
-            <div class="Readme">
-                <h3>Readme</h3> 
-               <a id="link_read" href="#"> <img src="#" class="read" id="README_" alt=""></a>
+           <span class="welcome">  
+               <h2>Welcome to GitStats </h2>
+               <h4>Here you can view statistics of the github <br> 
+                   of all developers around the world</h4>
+   
+                <button class="btn-start-git" > Start </button>       
+           </span>
+      
+       </div>
+
+
+
+       <div class="input-screen">
+        <div class="content-screen">
+          <div class="box-input">
+            <div class="chat-box">
+              <span>Firstly enter the name of some user that exists on github</span>
+              <h6 id="close" onclick="animationOut(document.querySelector('.chat-box'))">OK</h6>
             </div>
-         </div>
-         </div>
-         </div>
-        
+            <div class="logo-input-area">
+              <img src="img/logo-max.png" alt="">
+              <span>GitStats</span>
+            </div>
+
+            <input type="text" name="user" id="user" placeholder="example: VBrianB">
+
+            <button class="btn-start-git-stats" >Start</button>
+          </div>
+        </div>
+         
+       </div>
 
 
-</body>
-<script src="github.js"></script>
-<script src="script.js"></script>
 
+
+
+
+
+
+    <div class="container">
+     
+      <div class="left">
+        <div class="item profile">
+          <div class="profile-pic-area">
+            <img src="img/logo-GitStats.png" id="profile-img" alt="" />
+          </div>
+
+          <div class="user-area">
+            <span id="name-irl">Sapao Careca</span>
+            <span id="user-name">Sapo_Careca</span>
+            <img
+              src="https://komarev.com/ghpvc/?username=maykbrito&color=red"
+              id="profile_views"
+              alt="Profile views"
+            />
+          </div>
+
+          <div class="bio-area">
+            <span id="bio-text"
+              >Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis
+              impedit deserunt ex molestias quos dolores ut maxime quaerat,
+              accusantium unde exercitationem aperiam temporibus? Ipsam dolore
+              id mollitia nihil quisquam fuga?</span
+            >
+          </div>
+
+          <div class="info">
+            <label class="info-localization">
+              <img src="img/localizattion-icon.png" alt="" />
+              <span id="localization"> localization </span>
+            </label>
+            <label class="link">
+              <img src="img/link-icon.png" alt="" /><span id="blogText"
+                ><a href="" id="blog">aa</a></span
+              >
+            </label>
+          </div>
+        </div>
+      </div>
+      <div class="right">
+        <div class="item stats-profile">
+          <div class="btn-stats active">Overview</div>
+          <div class="btn-stats">
+            Respositories<span id="Repositories-Number">4</span>
+          </div>
+          <div class="btn-stats">Followers<span id="Followers">4</span></div>
+          <div class="btn-stats">Following<span id="Following">4</span></div>
+        </div>
+
+        <div class="item stats">
+          <img
+            width="60%"
+            id="stats-img-contribuitions"
+            height="180em"
+            src="https://github-readme-stats.vercel.app/api?username=VBrianB&show_icons=true&theme=radical&include_all_commits=true&count_private=true&title_color=#ffffff"
+          />
+          <img
+            width="40%"
+            id="stats-img-languages"
+            height="180em"
+            src="https://github-readme-stats.vercel.app/api/top-langs/?username=VBrianB&layout=compact&langs_count=7&theme=radical"
+          />
+        </div>
+
+        <div class="content-extra">
+          <div class="item ext">
+            <h3>Medals</h3>
+
+            <div class="medalhas">
+              <img src="img/Medalha-Premium.png" alt="" />
+              <img src="img/Medalha-MOC.png" alt="" />
+            </div>
+          </div>
+          <div class="Readme">
+            <h3>Readme</h3>
+            <a id="link_read" href="#">
+              <img src="#" class="read" id="README_" alt=""
+            /></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="script.js"></script>
 </html>
