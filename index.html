@@ -43,19 +43,20 @@
           <img src="img/logo-max.png" alt="">
           <span>GitStats</span>
         </div>
-
-  
           <input type="text" name="user" id="user" placeholder="example: VBrianB" >
            
         </label>
 
         
 
-        <button class="btn-start-git-stats">Start</button>
+        <button id="btn-void" class="btn-start-git-stats void">Start</button>
       </div>
     </div>
 
   </div>
+
+
+
 
 <!-- Stats Screen -->
 
@@ -129,6 +130,16 @@
       </div>
     </div>
   </div>
+
+  <!-- Modal -->
+
+  <div class="modalErrServer">
+    <img src="img/errIMG.png" alt="">
+    <span> Ops! Something went wrong... <br>
+     Check your username exists or is written correctly.</span>
+    <button class="closeErr"> Ok   </button>
+  </div>
+
 </body>
 <script src="script.js"></script>
 

@@ -264,6 +264,43 @@ header span {
     cursor: pointer;
 }
 
+.btn-start-git-stats.void{
+    background: none;
+    color: #2D52C1;
+    border: 1px solid #2D52C1;
+}
+/* Modal Err Input Screen */
+.modalErrServer{
+    position: absolute;
+    z-index: 99;
+    width: 500px;
+    height: 250px;
+    background-color: white;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    top: -50%;
+    opacity: 0;
+    display: none;
+    transform: translateY(-50%);
+    text-align: center;
+    line-height: 1.3em;
+}
+.closeErr{
+    padding: 8px 36px;
+    background-color: #2551d7;
+    color: white;
+    border: none;
+    border-radius: 32px;
+    margin-top: 25px;
+}
+.closeErr:hover{
+    cursor: pointer;
+    box-shadow: 0px 0px 12px #2551d7;
+}
 
 /* Stats Screen */
 

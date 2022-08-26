@@ -1,9 +1,37 @@
 
+ function CheckInput(){
+    let btn = document.querySelector('#btn-void');
+    let input = document.getElementById('user');
 
-
+    
+    if(input.value !== ''){
+    btn.classList.remove('void');
+    }
+    else{
+        btn.classList.add('void')
+    }
+ } 
+  
 
 
 /* Onclick Functions */
+document.querySelector('.closeErr').addEventListener('click',()=>{
+
+    let Modal = document.querySelector('.modalErrServer');
+    let InputScreen = document.querySelector('.input-screen');
+    
+    Modal.style.top = '-50%'
+    Modal.style.opacity = '0';
+    setTimeout(()=>{
+        Modal.style.display = 'none'
+    },300)
+
+    document.getElementById('user').value='';
+    animationIn(InputScreen);
+    CheckInput();
+   
+    
+})
 
 document.querySelector('#ChangeUser').addEventListener('click',()=>{
     let cookie = true
@@ -18,7 +46,14 @@ document.querySelector('#ChangeUser').addEventListener('click',()=>{
     }, 500)
     document.getElementById('user').value='';
     document.querySelector('.chat-box span').innerHTML = 'Glad you liked, keep using GitStats!'
+    CheckInput();
+    
 })
+
+
+document.querySelector('#user').addEventListener('input', ()=>{
+    CheckInput();
+});
 
 
 document.querySelector('.btn-start-git').addEventListener('click', () => {
@@ -29,39 +64,23 @@ document.querySelector('.btn-start-git').addEventListener('click', () => {
     setTimeout(() => {
         animationIn(InputScreen);
     }, 500)
-
     
 });
 
 document.querySelector('.btn-start-git-stats').addEventListener('click', () => {
-
-    let InputScreen = document.querySelector('.input-screen');
-    let StatsScreen = document.querySelector('.container');
-    animationOut(InputScreen);
-    setTimeout(() => {
-        StatsScreen.style.display = 'flex'
-        setTimeout(() => {
-            StatsScreen.style.opacity = '1'
-        }, 300)
-    }, 500)
-    pegardados();
-
-
+    getData();
 });
 
 
 
 /* connecting the API and creating the interface */
 
-async function pegardados() {
+async function getData() {
 
     try {
         let User = document.querySelector('#user').value;
         const response = await fetch(`https://api.github.com/users/${User}`)
-
-
         const user = await response.json();
-
 
         // Interface - Profile
 
@@ -91,11 +110,35 @@ async function pegardados() {
         }
         let ReadMe = document.getElementById('README_').src = `https://github-readme-stats.vercel.app/api/pin/?username=${User}&repo=${User}&theme=radical`
         let LinkRead = document.getElementById('link_read').href = `https://github.com/${User}/${User}`
-        console.log('executou');
+
+        // Animation screen appearing
+
+        let InputScreen = document.querySelector('.input-screen');
+        let StatsScreen = document.querySelector('.container');
+        animationOut(InputScreen);
+        setTimeout(() => {
+            StatsScreen.style.display = 'flex'
+            setTimeout(() => {
+                StatsScreen.style.opacity = '1'
+            }, 300)
+        }, 500)
     }
 
+
+    // Err 404 
+
     catch (e) {
-        console.log(e)
+    
+    let InputScreen = document.querySelector('.input-screen');
+    let Modal = document.querySelector('.modalErrServer');
+
+    animationOut(InputScreen);
+    Modal.style.display = 'flex'
+    setTimeout(()=>{
+        Modal.style.top = '50%'
+        Modal.style.opacity = '1';
+    },100)
+   
     }
 
 
