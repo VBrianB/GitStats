@@ -10,6 +10,10 @@
     else{
         btn.classList.add('void')
     }
+
+    if(input.classList('void')){
+        btn.preventDeafult();
+    }
  } 
   
 
@@ -50,12 +54,6 @@ document.querySelector('#ChangeUser').addEventListener('click',()=>{
     
 })
 
-
-document.querySelector('#user').addEventListener('input', ()=>{
-    CheckInput();
-});
-
-
 document.querySelector('.btn-start-git').addEventListener('click', () => {
     let ScreenW = document.querySelector('.container-welcome');
     let InputScreen = document.querySelector('.input-screen');
@@ -65,6 +63,10 @@ document.querySelector('.btn-start-git').addEventListener('click', () => {
         animationIn(InputScreen);
     }, 500)
     
+});
+
+document.querySelector('#user').addEventListener('input', ()=>{
+    CheckInput();
 });
 
 document.querySelector('.btn-start-git-stats').addEventListener('click', () => {
